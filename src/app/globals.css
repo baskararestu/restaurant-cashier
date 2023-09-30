@@ -3,10 +3,5 @@
 @tailwind utilities;
 
 .active-tab {
-  color: #fff; /* Text color for the active tab */
-  background-color: #007bff; /* Background color for the active tab */
-  border: 2px solid #007bff; /* Border for the active tab */
-  border-radius: 4px; /* Border radius for the active tab */
-  padding: 8px 16px; /* Padding for the active tab */
-  font-weight: bold; /* Font weight for the active tab (optional) */
+  @apply bg-white/80 tab;
 }

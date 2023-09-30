@@ -1,12 +1,12 @@
 import MainCard from "@/components/MainCard";
 import React from "react";
 
-function Order() {
+function Kasir() {
   return (
     <div>
-      <MainCard>order</MainCard>
+      <MainCard>Kasir</MainCard>
     </div>
   );
 }
 
-export default Order;
+export default Kasir;

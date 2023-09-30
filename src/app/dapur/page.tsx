@@ -1,12 +1,12 @@
 import MainCard from "@/components/MainCard";
 import React from "react";
 
-function Order() {
+function Kitchen() {
   return (
     <div>
-      <MainCard>order</MainCard>
+      <MainCard>dapur</MainCard>
     </div>
   );
 }
 
-export default Order;
+export default Kitchen;

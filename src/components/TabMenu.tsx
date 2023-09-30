@@ -9,30 +9,38 @@ function TabMenu() {
     router.replace(route);
   };
   return (
-    <div className="tabs tabs-boxed w-[30rem] h-14 flex items-center justify-center gap-20 font-bold">
+    <div className="tabs bg-gray-100 w-[30rem] h-16 rounded-xl shadow-sm flex items-center justify-around">
       <a
-        className={`tab text-lg ${
-          pathname === "/menu" ? "bg-white/80 w-24 h-12" : ""
+        className={`tab text-lg px-4 mx-2 ${
+          pathname === "/menu" ? "tab-active bg-white/80 rounded-lg h-14" : ""
         }`}
         onClick={() => handleTabClick("/menu")}
       >
         Menu
       </a>
       <a
-        className={`tab text-lg ${
-          pathname === "/order" ? "bg-white/80 w-24 h-12" : ""
+        className={`tab text-lg px-4 mx-2 ${
+          pathname === "/order" ? "tab-active bg-white/80 rounded-lg h-14" : ""
         }`}
         onClick={() => handleTabClick("/order")}
       >
         Order
       </a>
       <a
-        className={`tab text-lg ${
-          pathname === "/kitchen" ? "bg-white/80 w-24" : ""
+        className={`tab text-lg px-4 mx-2 ${
+          pathname === "/dapur" ? "tab-active bg-white/80 rounded-lg h-14" : ""
         }`}
-        onClick={() => handleTabClick("/kitchen")}
+        onClick={() => handleTabClick("/dapur")}
       >
-        Kitchen
+        Dapur
+      </a>
+      <a
+        className={`tab text-lg px-4 mx-2 ${
+          pathname === "/kasir" ? "tab-active bg-white/80 rounded-lg h-14" : ""
+        }`}
+        onClick={() => handleTabClick("/kasir")}
+      >
+        Kasir
       </a>
     </div>
   );

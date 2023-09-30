@@ -2,6 +2,9 @@ import TabMenu from "@/components/TabMenu";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Headers from "@/components/Headers";
+import ButtonReset from "@/components/ButtonReset";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <div className="flex min-h-screen flex-col items-center pt-14">
-          <TabMenu />
+          <Headers />
+          <div className="flex w-full justify-center items-center gap-24">
+            <TabMenu />
+            <ButtonReset />
+          </div>
           {children}
         </div>
       </body>
