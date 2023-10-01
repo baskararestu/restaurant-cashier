@@ -14,3 +14,22 @@ export interface MenuFunctions {
   priceValue: number;
   setPriceValue: React.Dispatch<React.SetStateAction<number>>;
 }
+
+export interface ButtonTableProps {
+  onTableSelect: (tableId: string) => void;
+  selectedTable: string | null;
+}
+
+export interface Order {
+  menu: string;
+  table: string;
+  totalPrice: number;
+  quantity: number;
+}
+
+export interface ExistingOrder {
+  menu: string;
+  table: string;
+  totalPrice: number;
+  quantity: number;
+}

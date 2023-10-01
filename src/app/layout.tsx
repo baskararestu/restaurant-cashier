@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <div className="flex min-h-screen flex-col items-center pt-14">
           <Headers />
-          <div className="flex w-full justify-center items-center gap-24">
+          <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-5 lg:gap-24">
             <TabMenu />
             <ButtonReset />
           </div>

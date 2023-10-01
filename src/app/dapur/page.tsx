@@ -1,10 +1,13 @@
 import MainCard from "@/components/MainCard";
 import React from "react";
+import DapurContent from "./DapurContent";
 
 function Kitchen() {
   return (
     <div>
-      <MainCard>dapur</MainCard>
+      <MainCard>
+        <DapurContent />
+      </MainCard>
     </div>
   );
 }

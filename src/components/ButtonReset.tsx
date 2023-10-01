@@ -10,7 +10,10 @@ function ButtonReset() {
   };
 
   return (
-    <button className="btn h-16 w-[8.5rem]" onClick={handleClick}>
+    <button
+      className="btn w-[10rem] lg:h-16 lg:w-[8.5rem]"
+      onClick={handleClick}
+    >
       Reset
     </button>
   );
