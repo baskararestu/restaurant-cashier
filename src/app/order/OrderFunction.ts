@@ -1,15 +1,13 @@
 import React from "react";
-import { menus } from "@/lib/data";
 import { MenuItem, Order } from "@/lib/Type";
 
 export function handleMenuChange(
   selectedValue: string,
+  menuList: MenuItem[],
   setSelectedMenu: React.Dispatch<React.SetStateAction<string | null>>,
   setSelectedMenuPrice: React.Dispatch<React.SetStateAction<number | null>>
 ) {
-  const menuData = JSON.parse(localStorage.getItem("menuData") || "[]");
-
-  const selectedMenuItem = menuData.find(
+  const selectedMenuItem = menuList.find(
     (menu: MenuItem) => menu.name === selectedValue
   );
 

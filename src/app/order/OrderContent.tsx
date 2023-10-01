@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import ButtonAddOrder from "@/components/ButtonAddOrder";
 import ButtonTable from "@/components/ButtonTable";
-import { menus } from "@/lib/data";
 import { handleMenuChange, handleOrder } from "./OrderFunction";
+import { MenuItem } from "@/lib/Type";
 
 function OrderContent() {
   const [selectedTable, setSelectedTable] = useState<string | null>(null);
@@ -13,9 +13,8 @@ function OrderContent() {
     null
   );
   const [quantity, setQuantity] = useState<number>(1);
-  const menuList: { id: string; name: string }[] = JSON.parse(
-    localStorage.getItem("menuData") || "[]"
-  );
+  const menuList = JSON.parse(localStorage.getItem("menuData") || "[]");
+
   const totalPrice =
     selectedMenuPrice !== null ? selectedMenuPrice * quantity : 0;
   console.log(selectedMenu, "menu");
@@ -35,6 +34,7 @@ function OrderContent() {
             onChange={(event) =>
               handleMenuChange(
                 event.target.value,
+                menuList,
                 setSelectedMenu,
                 setSelectedMenuPrice
               )
@@ -44,7 +44,7 @@ function OrderContent() {
             <option disabled value="">
               Pilih Menu
             </option>
-            {menuList.map((menu) => (
+            {menuList.map((menu: MenuItem) => (
               <option key={menu.id} value={menu.name}>
                 {menu.name}
               </option>

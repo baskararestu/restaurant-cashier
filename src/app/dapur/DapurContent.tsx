@@ -32,18 +32,25 @@ function DapurContent() {
               <th>Menu</th>
               <th>Jumlah</th>
               <th>Harga</th>
-              <th>Selesai</th>
             </tr>
           </thead>
           <tbody className="text-lg">
-            {orders.map((order, index) => (
-              <tr key={index}>
-                <th>{index + 1}</th>
-                <td>{order.menu}</td>
-                <td>{order.quantity}</td>
-                <td>{order.totalPrice}</td>
+            {orders.length === 0 || orders === null ? (
+              <tr>
+                <td colSpan={4} className="text-center text-lg">
+                  Tidak ada menu
+                </td>
               </tr>
-            ))}
+            ) : (
+              orders.map((order, index) => (
+                <tr key={index}>
+                  <th>{index + 1}</th>
+                  <td>{order.menu}</td>
+                  <td>{order.quantity}</td>
+                  <td>{order.totalPrice}</td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>

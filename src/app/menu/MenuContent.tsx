@@ -45,7 +45,7 @@ function MenuContent(): JSX.Element {
             </tr>
           </thead>
           <tbody>
-            {menuData.length === 0 || menuData.length === null ? (
+            {menuData.length === 0 || menuData === null ? (
               <tr>
                 <td colSpan={4} className="text-center text-lg">
                   Tidak ada menu
