@@ -1,32 +1,11 @@
 "use client";
 
-import { Order } from "@/lib/Type";
 import { tableList } from "@/lib/data";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useDapurContent } from "./DapurFunction";
 
 function DapurContent() {
-  const [selectedTable, setSelectedTable] = useState<string | null>(null);
-  const [orders, setOrders] = useState<Order[]>([]);
-
-  const handleTableSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedTableName = event.target.value;
-    setSelectedTable(selectedTableName);
-  };
-
-  useEffect(() => {
-    const selectedTableName = selectedTable;
-
-    if (!selectedTableName) {
-      setOrders([]);
-      return;
-    }
-
-    const itemOrder = JSON.parse(localStorage.getItem("itemOrder") || "[]");
-    const filteredOrders = itemOrder.filter(
-      (order: Order) => order.table === selectedTableName
-    );
-    setOrders(filteredOrders);
-  }, [selectedTable]);
+  const { selectedTable, orders, handleTableSelect } = useDapurContent();
 
   return (
     <div className="flex flex-col gap-3">
@@ -34,7 +13,7 @@ function DapurContent() {
       <select
         className="select select-bordered w-full max-w-xs"
         value={selectedTable || ""}
-        onChange={handleTableSelect}
+        onChange={(event) => handleTableSelect(event.target.value)}
       >
         <option disabled value="">
           Pilih Meja

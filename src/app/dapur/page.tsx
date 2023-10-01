@@ -4,7 +4,7 @@ import DapurContent from "./DapurContent";
 
 function Kitchen() {
   return (
-    <div>
+    <div className="h-full mb-10">
       <MainCard>
         <DapurContent />
       </MainCard>

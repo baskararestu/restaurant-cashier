@@ -38,7 +38,11 @@ export function handleOrder(
     );
 
     if (existingOrderIndex !== -1) {
-      existingOrders[existingOrderIndex].quantity += quantity;
+      const updatedOrder = { ...existingOrders[existingOrderIndex] };
+      updatedOrder.quantity += quantity;
+      updatedOrder.totalPrice = selectedMenuPrice * updatedOrder.quantity;
+
+      existingOrders[existingOrderIndex] = updatedOrder;
     } else {
       const order = {
         menu: selectedMenu,

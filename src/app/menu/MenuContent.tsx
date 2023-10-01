@@ -1,8 +1,7 @@
-// MenuContent.tsx
-
 import React from "react";
 import { useMenuFunctions } from "./MenuFunction";
 import { BsTrash } from "react-icons/bs";
+import ButtonAddMenu from "@/components/ButtonAddMenu";
 
 function MenuContent(): JSX.Element {
   const {
@@ -33,9 +32,7 @@ function MenuContent(): JSX.Element {
           value={priceValue}
           onChange={(e) => setPriceValue(Number(e.target.value))}
         />
-        <button className="btn w-[10rem]" onClick={addMenuItem}>
-          Tambah
-        </button>
+        <ButtonAddMenu addMenuItem={addMenuItem} />
       </div>
       <div className="flex justify-between items-center mt-2 overflow-x-auto">
         <table className="table w-full">

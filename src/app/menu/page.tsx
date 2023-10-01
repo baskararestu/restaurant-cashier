@@ -5,7 +5,7 @@ import MenuContent from "./MenuContent";
 
 function Menu() {
   return (
-    <div>
+    <div className="h-full mb-10">
       <MainCard>
         <h3 className="text-lg font-semibold">Menu Makanan</h3>
         <div className="py-3">
