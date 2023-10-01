@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ButtonAddOrder from "@/components/ButtonAddOrder";
 import ButtonTable from "@/components/ButtonTable";
 import { handleMenuChange, handleOrder } from "./OrderFunction";
@@ -13,12 +13,16 @@ function OrderContent() {
     null
   );
   const [quantity, setQuantity] = useState<number>(1);
-  const menuList = JSON.parse(localStorage.getItem("menuData") || "[]");
+  const [menuList, setMenuList] = useState<MenuItem[]>([]);
 
   const totalPrice =
     selectedMenuPrice !== null ? selectedMenuPrice * quantity : 0;
-  console.log(selectedMenu, "menu");
-  console.log(menuList, "menulist");
+
+  useEffect(() => {
+    const menuData = JSON.parse(localStorage.getItem("menuData") || "[]");
+    setMenuList(menuData);
+  }, []);
+
   return (
     <div className="flex flex-col gap-5">
       <div className="flex justify-center">
