@@ -1,9 +1,21 @@
+import { tableList } from "@/lib/data";
 import React from "react";
+import { ButtonTableProps } from "@/lib/Type";
 
-function ButtonTable() {
+function ButtonTable({ onTableSelect, selectedTable }: ButtonTableProps) {
   return (
-    <div className="">
-      <button className="btn btn-lg w-[10rem] h-[5rem] text-xl">Meja 1</button>
+    <div className="btn-group">
+      {tableList.map((table) => (
+        <button
+          key={table.id}
+          className={` btn w-[7rem] lg:btn-lg lg:w-[10rem] lg:h-[5rem] lg:text-xl ${
+            selectedTable === table.name ? "bg-blue-500" : ""
+          }`}
+          onClick={() => onTableSelect(table.name)}
+        >
+          {table.name}
+        </button>
+      ))}
     </div>
   );
 }
