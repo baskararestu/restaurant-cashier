@@ -70,7 +70,7 @@ function KasirContent() {
           </table>
         </div>
       ) : (
-        <div className="py-3 text-xl font-semibold text-red-600 text-center">
+        <div className="py-3 text-lg font-semibold text-center">
           Pilih Meja Terlebih Dahulu
         </div>
       )}

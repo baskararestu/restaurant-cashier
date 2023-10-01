@@ -13,10 +13,13 @@ function OrderContent() {
     null
   );
   const [quantity, setQuantity] = useState<number>(1);
-
+  const menuList: { id: string; name: string }[] = JSON.parse(
+    localStorage.getItem("menuData") || "[]"
+  );
   const totalPrice =
     selectedMenuPrice !== null ? selectedMenuPrice * quantity : 0;
-
+  console.log(selectedMenu, "menu");
+  console.log(menuList, "menulist");
   return (
     <div className="flex flex-col gap-5">
       <div className="flex justify-center">
@@ -41,7 +44,7 @@ function OrderContent() {
             <option disabled value="">
               Pilih Menu
             </option>
-            {menus.map((menu) => (
+            {menuList.map((menu) => (
               <option key={menu.id} value={menu.name}>
                 {menu.name}
               </option>

@@ -45,21 +45,29 @@ function MenuContent(): JSX.Element {
             </tr>
           </thead>
           <tbody>
-            {menuData.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{formatAsIDR(item.price)}</td>
-                <td className="text-end">
-                  <button
-                    className="text-red-500 text-2xl"
-                    onClick={() => removeMenuItem(item.id)}
-                  >
-                    <BsTrash />
-                  </button>
+            {menuData.length === 0 || menuData.length === null ? (
+              <tr>
+                <td colSpan={4} className="text-center text-lg">
+                  Tidak ada menu
                 </td>
               </tr>
-            ))}
+            ) : (
+              menuData.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{formatAsIDR(item.price)}</td>
+                  <td className="text-end">
+                    <button
+                      className="text-red-500 text-2xl"
+                      onClick={() => removeMenuItem(item.id)}
+                    >
+                      <BsTrash />
+                    </button>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
