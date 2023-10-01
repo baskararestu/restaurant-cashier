@@ -19,7 +19,7 @@ function OrderContent() {
 
   return (
     <div className="flex flex-col gap-5">
-      <div>
+      <div className="flex justify-center">
         <ButtonTable
           onTableSelect={(tableId) => setSelectedTable(tableId)}
           selectedTable={selectedTable}

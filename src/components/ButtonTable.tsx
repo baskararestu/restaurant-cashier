@@ -10,7 +10,7 @@ function ButtonTable({ onTableSelect, selectedTable }: ButtonTableProps) {
           key={table.id}
           className={` btn w-[7rem] lg:btn-lg lg:w-[10rem] lg:h-[5rem] lg:text-xl ${
             selectedTable === table.name ? "bg-blue-500" : ""
-          }`}
+          } hover:bg-blue-500/50`}
           onClick={() => onTableSelect(table.name)}
         >
           {table.name}

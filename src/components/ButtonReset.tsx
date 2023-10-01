@@ -6,6 +6,8 @@ import React from "react";
 function ButtonReset() {
   const handleClick = () => {
     localStorage.setItem("menuData", JSON.stringify(menus));
+    localStorage.removeItem("itemOrder");
+    localStorage.setItem("paidOrder", JSON.stringify([]));
     window.location.reload();
   };
 
