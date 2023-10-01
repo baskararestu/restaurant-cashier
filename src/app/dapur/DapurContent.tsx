@@ -38,7 +38,7 @@ function DapurContent() {
             {orders.length === 0 || orders === null ? (
               <tr>
                 <td colSpan={4} className="text-center text-lg">
-                  Tidak ada menu
+                  Tidak ada pesanan
                 </td>
               </tr>
             ) : (
