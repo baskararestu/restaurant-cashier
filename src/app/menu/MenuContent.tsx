@@ -18,7 +18,7 @@ function MenuContent(): JSX.Element {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex justify-between gap-2">
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-2">
         <input
           type="text"
           placeholder="Tambahkan Nama Menu..."
@@ -37,7 +37,7 @@ function MenuContent(): JSX.Element {
           Tambah
         </button>
       </div>
-      <div className="flex justify-between items-center mt-2">
+      <div className="flex justify-between items-center mt-2 overflow-x-auto">
         <table className="table w-full">
           <thead>
             <tr className="text-lg">

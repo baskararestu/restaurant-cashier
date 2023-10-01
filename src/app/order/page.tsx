@@ -1,10 +1,13 @@
 import MainCard from "@/components/MainCard";
 import React from "react";
+import OrderContent from "./OrderContent";
 
 function Order() {
   return (
     <div>
-      <MainCard>order</MainCard>
+      <MainCard>
+        <OrderContent />
+      </MainCard>
     </div>
   );
 }
